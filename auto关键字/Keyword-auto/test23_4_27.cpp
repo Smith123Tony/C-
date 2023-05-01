@@ -78,3 +78,43 @@
 //		cout << e << endl;
 //	}
 //}
+
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int a = 10;
+//
+//	auto x = &a;
+//	auto* y = &a;//指定y必须是指针
+//	auto& z = a;
+//
+//	cout << typeid(x).name() << endl;
+//	cout << typeid(y).name() << endl;
+//	cout << typeid(z).name() << endl;
+//
+//	*x = 1000;
+//	*y = 2000;
+//	z = 10000;
+//	return 0;
+//}
+
+
+//#include<iostream>
+//using namespace std;
+//void f(int)
+//{
+//	cout << "f(int)" << endl;
+//}
+//void f(int*)
+//{
+//	cout << "f(int*)" << endl;
+//}
+//int main()
+//{
+//	f(0);
+//	f(NULL);
+//	f((int*)(0));
+//	f(nullptr);
+//	return 0;
+//}
