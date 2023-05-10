@@ -39,85 +39,85 @@ using namespace std;
 //}
 
 
-//构造函数的重载
-typedef int DataType;
-class Stack
-{
-public:
-	//构造函数
-	Stack(int capacity = 4)
-	{
-		_array = (DataType*)malloc(sizeof(DataType) * capacity);
-		if (NULL == _array)
-		{
-			perror("malloc申请空间失败!!!");
-			return;
-		}
-		_capacity = capacity;
-		_size = 0;
-	}
-	Stack(DataType* a, int n)
-	{
-		cout << "Stack(DataType* a, int n)" << endl;
-		_array = (DataType*)malloc(sizeof(DataType) * n);
-		if (NULL == _array)
-		{
-			perror("malloc申请空间失败!!!");
-			return;
-		}
-		memcpy(_array, a, sizeof(DataType) * n);
-		_capacity = n;
-		_size = n;
-	}
-	void Push(DataType data)
-	{
-		CheckCapacity();
-		_array[_size] = data;
-		_size++;
-	}
-	void Pop()
-	{
-		if (Empty())
-			return;
-		_size--;
-	}
-	DataType Top() { return _array[_size - 1]; }
-	int Empty() { return 0 == _size; }
-	int Size() { return _size; }
-	//析构函数
-	~Stack()
-	{
-		cout << "~Stack()" << endl;
-		if (_array)
-		{
-			free(_array);
-			_array = NULL;
-			_capacity = 0;
-			_size = 0;
-		}
-	}
-	void CheckCapacity()
-	{
-		if (_size == _capacity)
-		{
-			int newcapacity = _capacity * 2;
-			DataType* temp = (DataType*)realloc(_array, newcapacity *
-				sizeof(DataType));
-			if (temp == NULL)
-			{
-				perror("realloc申请空间失败!!!");
-				return;
-			}
-			_array = temp;
-			_capacity = newcapacity;
-		}
-	}	
-private:
-	
-	DataType * _array;
-	int _capacity;
-	int _size;
-};
+////构造函数的重载
+//typedef int DataType;
+//class Stack
+//{
+//public:
+//	//构造函数
+//	Stack(int capacity = 4)
+//	{
+//		_array = (DataType*)malloc(sizeof(DataType) * capacity);
+//		if (NULL == _array)
+//		{
+//			perror("malloc申请空间失败!!!");
+//			return;
+//		}
+//		_capacity = capacity;
+//		_size = 0;
+//	}
+//	Stack(DataType* a, int n)
+//	{
+//		cout << "Stack(DataType* a, int n)" << endl;
+//		_array = (DataType*)malloc(sizeof(DataType) * n);
+//		if (NULL == _array)
+//		{
+//			perror("malloc申请空间失败!!!");
+//			return;
+//		}
+//		memcpy(_array, a, sizeof(DataType) * n);
+//		_capacity = n;
+//		_size = n;
+//	}
+//	void Push(DataType data)
+//	{
+//		CheckCapacity();
+//		_array[_size] = data;
+//		_size++;
+//	}
+//	void Pop()
+//	{
+//		if (Empty())
+//			return;
+//		_size--;
+//	}
+//	DataType Top() { return _array[_size - 1]; }
+//	int Empty() { return 0 == _size; }
+//	int Size() { return _size; }
+//	//析构函数
+//	~Stack()
+//	{
+//		cout << "~Stack()" << endl;
+//		if (_array)
+//		{
+//			free(_array);
+//			_array = NULL;
+//			_capacity = 0;
+//			_size = 0;
+//		}
+//	}
+//	void CheckCapacity()
+//	{
+//		if (_size == _capacity)
+//		{
+//			int newcapacity = _capacity * 2;
+//			DataType* temp = (DataType*)realloc(_array, newcapacity *
+//				sizeof(DataType));
+//			if (temp == NULL)
+//			{
+//				perror("realloc申请空间失败!!!");
+//				return;
+//			}
+//			_array = temp;
+//			_capacity = newcapacity;
+//		}
+//	}	
+//private:
+//	
+//	DataType * _array;
+//	int _capacity;
+//	int _size;
+//};
 //int main()
 //{
 //	int a[10] = { 1,2,3,4,5,6,7,8,9,10 };
