@@ -47,29 +47,57 @@ typedef int DataType;
 //	return 0;
 //}
 
-struct TreeNode
-{
+//struct TreeNode
+//{
+//
+//	TreeNode* _left;
+//	TreeNode* _right;
+//	int _val;
+//
+//	TreeNode(int val = 0)
+//	{
+//		_left = nullptr;
+//		_right = nullptr;
+//		_val = val;
+//	}
+//};
+//class Tree
+//{
+//private:
+//	TreeNode* _root = nullptr;
+//};
+//int main()
+//{
+//	Tree t1;
+//	TreeNode n1(1);
+//	TreeNode n2(2);
+//}
 
-	TreeNode* _left;
-	TreeNode* _right;
-	int _val;
 
-	TreeNode(int val = 0)
-	{
-		_left = nullptr;
-		_right = nullptr;
-		_val = val;
-	}
-};
+////编译器对自定义类型会去调用它的默认构造函数
+//class MyQueue
+//{
+//	Stack _pushst;
+//	Stack _popst;
+//};
+//
+//int main()
+//{
+//	MyQueue q;
+//	return 0;
+//}
 
-class Tree
-{
-private:
-	TreeNode* _root = nullptr;
-};
-int main()
-{
-	Tree t1;
-	TreeNode n1(1);
-	TreeNode n2(2);
-}
+//class Date
+//{
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+
+//class MyQueue
+//{
+//private:
+//	Stack _pushst;
+//	Stack _popst;
+//};
