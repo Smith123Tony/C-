@@ -7,85 +7,32 @@ typedef int DataType ;
 
 
 
-class Date
-{
-public:
-	Date(int year = 2023, int month = 5, int day = 20)
-	{
-		_year = year;
-		_month = month;
-		_day = day;
-	}
-	//Date(Date& d)
-	//{
-	//	cout << "Date(Date& d)" << endl;
-	//	_year = d._year;
-	//	_month = d._month;
-	//	_day = d._day;
-
-	//	//错误写法
-	//	/*d._year = _year;
-	//	d._month = _month;
-	//	d._day = _day;*/
-	//}
-private:
-	int _year;
-	int _month;
-	int _day;
-};
-
-class Stack
-{
-public:
-	Stack(int capacity = 4)
-	{
-		_array = (DataType*)malloc(sizeof(DataType) * capacity);
-		if (NULL == _array)
-		{
-			perror("malloc申请空间失败!!!");
-			return;
-		}
-		_capacity = capacity;
-		_top = 0;
-	}
-
-	//深拷贝
-	Stack(const Stack& st)
-	{
-		_array = (int*)malloc(sizeof(int) * st._capacity);
-		if (nullptr == _array)
-		{
-			perror("malloc 申请空间失败");
-			return;
-		}
-		memcpy(_array, st._array, sizeof(int) * st._top);
-		_top = st._top;
-		_capacity = st._capacity;
-	}
-
-	~Stack()
-	{
-		cout << "~Stack()" << endl;
-		if (_array)
-		{
-			free(_array);
-			_array = NULL;
-			_capacity = 0;
-			_top = 0;
-		}
-	}
-private:
-	DataType* _array;
-	int _capacity;
-	int _top;
-};
-
-class MyQueue
-{
-private:
-	Stack _pushst;
-	Stack _popst;
-};
+//class Date
+//{
+//public:
+//	Date(int year = 2023, int month = 5, int day = 20)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	//Date(Date& d)
+//	//{
+//	//	cout << "Date(Date& d)" << endl;
+//	//	_year = d._year;
+//	//	_month = d._month;
+//	//	_day = d._day;
+//
+//	//	//错误写法
+//	//	/*d._year = _year;
+//	//	d._month = _month;
+//	//	d._day = _day;*/
+//	//}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
 
 //void func(Date d)
 //{}
@@ -107,28 +54,80 @@ private:
 //}
 
 
-//////一个字节一个字节的进行拷贝
-////void func(Date d)
-////{}
+//class Stack
+//{
+//public:
+//	Stack(int capacity = 4)
+//	{
+//		_array = (DataType*)malloc(sizeof(DataType) * capacity);
+//		if (NULL == _array)
+//		{
+//			perror("malloc申请空间失败!!!");
+//			return;
+//		}
+//		_capacity = capacity;
+//		_top = 0;
+//	}
 //
-//void func(Date& d)
-//{}
+//	//深拷贝
+//	Stack(const Stack& st)
+//	{
+//		_array = (int*)malloc(sizeof(int) * st._capacity);
+//		if (nullptr == _array)
+//		{
+//			perror("malloc 申请空间失败");
+//			return;
+//		}
+//		memcpy(_array, st._array, sizeof(int) * st._top);
+//		_top = st._top;
+//		_capacity = st._capacity;
+//	}
 //
-////传值传参
-//////void func(Stack st)
+//	~Stack()
+//	{
+//		cout << "~Stack()" << endl;
+//		if (_array)
+//		{
+//			free(_array);
+//			_array = NULL;
+//			_capacity = 0;
+//			_top = 0;
+//		}
+//	}
+//private:
+//	DataType* _array;
+//	int _capacity;
+//	int _top;
+//};
+//
+////class MyQueue
+////{
+////private:
+////	Stack _pushst;
+////	Stack _popst;
+////};
+//
+////////一个字节一个字节的进行拷贝
+//////void func(Date d)
 //////{}
-//
-////传引用传参
-//void func(Stack& st)
-//{}
+////
+////void func(Date& d)
+////{}
+////
+//////传值传参
+////////void func(Stack st)
+////////{}
+////
+//////传引用传参
+////void func(Stack& st)
+////{}
 //
 ////切记不要返回局部变量的引用
 //Stack& func()
 //{
 //	Stack st;
-//	return st;
+//	return st;  //Stack &tmp  = st; ~Stack()
 //}
-//
 //int main()
 //{
 //
@@ -138,7 +137,6 @@ private:
 //	/*Stack st1;
 //	func(st1);
 //	func();*/
-//
 //	Stack ret = func();
 //	return 0;
 //}
