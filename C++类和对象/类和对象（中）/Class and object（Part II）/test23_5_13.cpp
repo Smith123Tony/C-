@@ -13,14 +13,14 @@
 //		_month = month;
 //		_day = day;
 //	}
-//	////拷贝构造
-//	//Date (const Date& d)
-//	//{
-//	//	cout << "Date(const Date& d)" << endl;
-//	//	_year = d._year;
-//	//	_month = d._month;
-//	//	_day = d._day;
-//	//}
+	//////拷贝构造
+	////Date (const Date& d)
+	////{
+	////	cout << "Date(const Date& d)" << endl;
+	////	_year = d._year;
+	////	_month = d._month;
+	////	_day = d._day;
+	////}
 //	void Print()
 //	{
 //		cout << _year << "-" << _month << "-" << _day << endl;
